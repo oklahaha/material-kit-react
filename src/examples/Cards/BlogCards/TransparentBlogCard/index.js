@@ -28,7 +28,7 @@ import MuiLink from "@mui/material/Link";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
-function TransparentBlogCard({ image, title, description, action }) {
+function TransparentBlogCard({ image, title, description ,description2, action }) {
   const cardActionStyles = {
     display: "flex",
     alignItems: "center",
@@ -105,7 +105,7 @@ function TransparentBlogCard({ image, title, description, action }) {
           </MuiLink>
         )}
         <MKTypography variant="body2" component="p" color="text" mb={3}>
-          {description}
+          {description}<br />{description2}
         </MKTypography>
         {action.type === "internal" ? (
           <MKTypography

@@ -24,7 +24,7 @@ import Grid from "@mui/material/Grid";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
-function HorizontalTeamCard({ image, name, position, description }) {
+function HorizontalTeamCard({ image, name, position, description, description2, description3 }) {
   return (
     <Card sx={{ mt: 3 }}>
       <Grid container>
@@ -47,7 +47,11 @@ function HorizontalTeamCard({ image, name, position, description }) {
               {position.label}
             </MKTypography>
             <MKTypography variant="body2" color="text">
-              {description}
+              <ul>
+                <li>{description}</li>
+                <li>{description2}</li>
+                <li>{description3}</li>
+              </ul>
             </MKTypography>
           </MKBox>
         </Grid>
