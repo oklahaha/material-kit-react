@@ -13,4 +13,6 @@ WORKDIR /usr/app
 # Install and cache app dependencies
 RUN yarn
 
+EXPOSE 3000
+
 CMD ["npm", "run", "start"]

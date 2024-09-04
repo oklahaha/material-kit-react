@@ -21,19 +21,19 @@ export default {
   socials: [
     {
       icon: <FacebookIcon />,
-      link: "https://www.facebook.com/CreativeTim/",
+      link: "https://www.facebook.com",
     },
     {
       icon: <InstagramIcon />,
-      link: "https://github.com/creativetimofficial",
+      link: "https://instagram.com",
     },
     {
       icon: <YouTubeIcon />,
-      link: "https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w",
+      link: "https://www.youtube.com",
     },
     {
       icon: <WhatsAppIcon />,
-      link: "https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w",
+      link: "https://www.whatsapp.com",
     },
   ],
   menus: [

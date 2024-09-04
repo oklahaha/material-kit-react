@@ -1,5 +1,6 @@
 import DataTable from "react-data-table-component";
 import React, {useState, useEffect} from "react"
+import Button from '@mui/material/Button';
 
 function Table() {
 
@@ -8,7 +9,6 @@ function Table() {
         fetch("http://localhost:8080/news/list")
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
             setNews(data);
         })
         .catch((err) => {
@@ -26,6 +26,14 @@ function Table() {
             name: "最新消息",
             selector: (row) => row.title,
             sortable: true,
+        },
+        {
+            name: "詳情",
+            cells: (row) => (
+                <button onClick= {() => {alert('clicked');}}>
+                    詳情
+                </button>
+            )
         }
     ];
 

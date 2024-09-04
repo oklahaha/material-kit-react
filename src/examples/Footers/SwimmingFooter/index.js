@@ -98,9 +98,9 @@ function Footer() {
               星期日及公眾假期: 休息<br />
             </MKTypography>
             <MKTypography
-                  key={"https://www.facebook.com/CreativeTim/"}
+                  key={"https://www.facebook.com"}
                   component="a"
-                  href={"https://www.facebook.com/CreativeTim/"}
+                  href={"https://www.facebook.com"}
                   target="_blank"
                   rel="noreferrer"
                   variant="h5"
@@ -111,9 +111,9 @@ function Footer() {
                   {<FacebookIcon />}
             </MKTypography>
             <MKTypography
-                  key={"https://github.com/creativetimofficial"}
+                  key={"https://github.com"}
                   component="a"
-                  href={"https://github.com/creativetimofficial"}
+                  href={"https://github.com"}
                   target="_blank"
                   rel="noreferrer"
                   variant="h5"
@@ -124,9 +124,9 @@ function Footer() {
                   {<InstagramIcon />}
             </MKTypography>
             <MKTypography
-                  key={"https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w"}
+                  key={"https://www.youtube.com"}
                   component="a"
-                  href={"https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w"}
+                  href={"https://www.youtube.com"}
                   target="_blank"
                   rel="noreferrer"
                   variant="h5"
@@ -137,9 +137,9 @@ function Footer() {
                   {<YouTubeIcon />}
             </MKTypography>
             <MKTypography
-                  key={"https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w"}
+                  key={"https://www.whatsapp.com"}
                   component="a"
-                  href={"https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w"}
+                  href={"https://www.whatsapp.com"}
                   target="_blank"
                   rel="noreferrer"
                   variant="h5"

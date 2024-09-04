@@ -42,6 +42,7 @@ import Icon from "@mui/material/Icon";
 // @mui icons
 import PoolIcon from '@mui/icons-material/Pool';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import WaterIcon from '@mui/icons-material/Water';
 
 //About Us
 import Introduction from "layouts/pages/aboutus/introduction";
@@ -160,6 +161,17 @@ const routes = [
       },
     ],
   },
-];
+  {
+    name: "水運會",
+    icon: <WaterIcon />,
+    collapse: [
+      {
+        name: "參賽者名單",
+        route: "/pages/notice/method",
+        component: <Method />,
+      },
+    ],
+  },
+]
 
 export default routes;

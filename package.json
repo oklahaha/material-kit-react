@@ -31,6 +31,7 @@
     "react-copy-to-clipboard": "5.1.0",
     "react-countup": "6.4.2",
     "react-data-table-component": "^7.6.2",
+    "react-devtools": "5.2.0",
     "react-dom": "18.2.0",
     "react-flatpickr": "3.10.13",
     "react-router-dom": "6.10.0",
