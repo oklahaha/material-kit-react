@@ -44,23 +44,26 @@ import PoolIcon from '@mui/icons-material/Pool';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import WaterIcon from '@mui/icons-material/Water';
 
-//About Us
+// About Us
 import Introduction from "layouts/pages/aboutus/introduction";
 import Purpose from "layouts/pages/aboutus/purpose";
 import Coach from "layouts/pages/aboutus/coach";
 import Location from "layouts/pages/aboutus/location";
 
-//Class
+// Class
 import AldultClass from "layouts/pages/class/aldultClass";
 import BasicClass from "layouts/pages/class/basicClass";
 import KidClass from "layouts/pages/class/kidClass";
 import SwimmingTeam from "layouts/pages/class/swimmingTeam";
 
-//Notice
+// Notice
 import Arrangement from "layouts/pages/notice/arrangement";
 import Method from "layouts/pages/notice/method";
 import Notice from "layouts/pages/notice/notice";
 import Weather from "layouts/pages/notice/weather";
+
+// Competition
+import Athlete from "layouts/pages/competition/athlete";
 
 // Contact Us
 import ContactUs from "layouts/pages/contactus/";
@@ -167,8 +170,8 @@ const routes = [
     collapse: [
       {
         name: "參賽者名單",
-        route: "/pages/notice/method",
-        component: <Method />,
+        route: "/pages/competition/athlete",
+        component: <Athlete />,
       },
     ],
   },
