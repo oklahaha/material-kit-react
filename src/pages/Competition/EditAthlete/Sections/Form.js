@@ -1,8 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, {useState} from "react"
+import React, { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom";
 
-function Form() {
+function Form({ athleteId }) {
     const navigate = useNavigate();
 
     const [athlete, setAthlete] = useState({
@@ -21,6 +21,33 @@ function Form() {
         fiftyMKickBoard: false,
     });
 
+    useEffect(() => {
+        const fetchAthleteData = async () => {
+            try {
+                const response = await fetch(`http://localhost:8080/athlete/getAthlete?athleteId=${athleteId}`);
+                if (response.ok) {
+                    const fetchedAthlete = await response.json();
+                    setAthlete(prev => ({
+                        ...prev,
+                        ...fetchedAthlete,
+                        age: fetchedAthlete.age.toString(),
+                        phone: fetchedAthlete.phone.toString(),
+                    }));
+                } else {
+                    console.error('Failed to fetch athlete data');
+                    // TODO: Add error handling
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                // TODO: Add error handling
+            }
+        };
+
+        if (athleteId) {
+            fetchAthleteData();
+        }
+    }, [athleteId]);
+
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
         setAthlete(prev => ({
@@ -31,34 +58,43 @@ function Form() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(athlete);
-
+    
         const athleteData = {
             ...athlete,
-            age: parseInt(athlete.age),
-            phone: parseInt(athlete.phone),
+            athleteId: athleteId,
+            age: athlete.age ? parseInt(athlete.age) : null,
+            phone: athlete.phone ? parseInt(athlete.phone) : null
         };
-
+    
+        console.log('Submitting athlete data:', athleteData);
+    
         try {
-            const response = await fetch('http://localhost:8080/athlete/addAthlete', {
-                method: 'POST',
+            const response = await fetch('http://localhost:8080/athlete/editAthlete', {
+                method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(athleteData),
             });
-
+    
             if (response.ok) {
-                const savedAthlete = await response.json();
-                console.log(savedAthlete);
-                navigate("/pages/competition/athlete", { state: { message: "Athlete added successfully!", type: "success" } });
+                const updatedAthlete = await response.json();
+                console.log('Updated athlete:', updatedAthlete);
+                navigate("/pages/competition/athlete", { state: { message: "Athlete updated successfully!", type: "success" } });
+            } else if (response.status === 404) {
+                console.error('Athlete not found');
+                // Add error handling for athlete not found
+                alert('Athlete not found. Please try again.');
             } else {
-                console.error('Failed to add athlete');
-                // TODO: Add error handling
+                const errorData = await response.json();
+                console.error('Failed to update athlete:', errorData);
+                // Add error handling
+                alert(`Failed to update athlete: ${errorData.message || 'Unknown error'}`);
             }
         } catch (error) {
             console.error('Error:', error);
-            // TODO: Add error handling
+            // Add error handling
+            alert(`An error occurred: ${error.message}`);
         }
     };
 

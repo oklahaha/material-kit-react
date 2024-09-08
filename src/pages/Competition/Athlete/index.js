@@ -19,70 +19,96 @@ import bgImage from "assets/images/swimmers.jpg";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+
+import React, { useEffect, useState } from "react";
 
 function Athlete() {
 
   const navigate = useNavigate();
+  const location = useLocation();
 
-    const addAthlete = () => {
-      console.log("add");
-      navigate("/pages/competition/addAthlete");
+  const [alert, setAlert] = useState(null);
+
+  useEffect(() => {
+    if (location.state?.message) {
+      setAlert({
+        message: location.state.message,
+        type: location.state.type || "success"
+      });
+      // Clear the message from location state
+      navigate(location.pathname, { replace: true, state: {} });
     }
+  }, [location.state, navigate]);
 
-    return (
-      <>
-        <DefaultNavbar
-          routes={routes}
-          action={{
-            type: "internal",
-            route: "/pages/contactus",
-            label: "聯絡我們",
-            color: "info",
-          }}
-          transparent
-          light
-        />
-        <MKBox bgColor="white">
-          <MKBox
-            minHeight="25rem"
-            width="100%"
-            sx={{
-              backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
-                `${linearGradient(
-                  rgba(gradients.dark.main, 0.8),
-                  rgba(gradients.dark.state, 0.8)
-                )}, url(${bgImage})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              display: "grid",
-              placeItems: "center",
-            }}
-          />
-          <Card
-            sx={{
-              p: 2,
-              mx: { xs: 2, lg: 3 },
-              mt: -8,
-              mb: 4,
-              backgroundColor: ({ palette: { white }, functions: { rgba } }) => rgba(white.main, 0.8),
-              backdropFilter: "saturate(200%) blur(30px)",
-              boxShadow: ({ boxShadows: { xxl } }) => xxl,
-            }}
-          >
-            <div style={{textAlign: "right"}}>
-                <button class="btn btn-default btn-primary"  onClick={addAthlete}>添加</button>
-            </div>
-            <br />
-            <Table />
-          </Card>
-          <MKBox pt={6} px={1} mt={6}>
-            <Footer />
-          </MKBox>
-        </MKBox>
-      </>
-    );
+  const addAthlete = () => {
+    navigate("/pages/competition/addAthlete");
   }
-  
-  export default Athlete;
-  
+
+  const appendAlert = (message, type) => {
+    setAlert({ message, type });
+    // Automatically remove the alert after 5 seconds
+    setTimeout(() => setAlert(null), 5000);
+  }
+
+  return (
+    <>
+      <DefaultNavbar
+        routes={routes}
+        action={{
+          type: "internal",
+          route: "/pages/contactus",
+          label: "聯絡我們",
+          color: "info",
+        }}
+        transparent
+        light
+      />
+      <MKBox bgColor="white">
+        <MKBox
+          minHeight="25rem"
+          width="100%"
+          sx={{
+            backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
+              `${linearGradient(
+                rgba(gradients.dark.main, 0.8),
+                rgba(gradients.dark.state, 0.8)
+              )}, url(${bgImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            display: "grid",
+            placeItems: "center",
+          }}
+        />
+        <Card
+          sx={{
+            p: 2,
+            mx: { xs: 2, lg: 3 },
+            mt: -8,
+            mb: 4,
+            backgroundColor: ({ palette: { white }, functions: { rgba } }) => rgba(white.main, 0.8),
+            backdropFilter: "saturate(200%) blur(30px)",
+            boxShadow: ({ boxShadows: { xxl } }) => xxl,
+          }}
+        >
+          {alert && (
+            <div className={`alert alert-${alert.type} alert-dismissible`} role="alert">
+              <div>{alert.message}</div>
+              <button type="button" className="btn-close" onClick={() => setAlert(null)} aria-label="Close"></button>
+            </div>
+          )}
+          <div style={{ textAlign: "right" }}>
+            <button type="button" className="btn btn-default btn-primary" onClick={addAthlete}>添加</button>
+          </div>
+          <br />
+          <Table onAlertChange={appendAlert} />
+        </Card>
+        <MKBox pt={6} px={1} mt={6}>
+          <Footer />
+        </MKBox>
+      </MKBox>
+    </>
+  );
+}
+
+export default Athlete;

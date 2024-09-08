@@ -64,6 +64,7 @@ import Weather from "layouts/pages/notice/weather";
 
 // Competition
 import Athlete from "layouts/pages/competition/athlete";
+import Item from "layouts/pages/competition/item";
 
 // Contact Us
 import ContactUs from "layouts/pages/contactus/";
@@ -172,6 +173,11 @@ const routes = [
         name: "參賽者名單",
         route: "/pages/competition/athlete",
         component: <Athlete />,
+      },
+      {
+        name: "比賽項目",
+        route: "/pages/competition/item",
+        component: <Item />,
       },
     ],
   },

@@ -27,6 +27,7 @@ import theme from "assets/theme";
 // import Presentation from "layouts/pages/presentation";
 import Frontpage from "layouts/pages/index";
 import AddAthletePage from "layouts/pages/competition/addAthlete";
+import EditAthletePage from "layouts/pages/competition/editAthlete";
 
 // Material Kit 2 React routes
 import routes from "routes";
@@ -61,6 +62,7 @@ export default function App() {
         <Route path="/frontpage" element={<Frontpage />} />
         <Route path="*" element={<Navigate to="/frontpage" />} />
         <Route path="/pages/competition/addAthlete" element={<AddAthletePage />} />
+        <Route path="/pages/competition/editAthlete" element={<EditAthletePage />} />
       </Routes>
     </ThemeProvider>
   );

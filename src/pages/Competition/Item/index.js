@@ -7,24 +7,27 @@ import MKBox from "components/MKBox";
 // Material Kit 2 React examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 
-// Author page sections
-import Form from "pages/Competition/AddAthlete/Sections/Form";
 import Footer from "examples/Footers/SwimmingFooter";
 
 // Routes
 import routes from "routes";
 
 // Images
-import bgImage from "assets/images/method-bg.jpg";
+import bgImage from "assets/images/swimmers.jpg";
 
-function AddAthlete() {
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Profile from "pages/Competition/Item/sections/Profile";
+
+function Athlete() {
+
   return (
     <>
       <DefaultNavbar
         routes={routes}
         action={{
-          type: "external",
-          route: "https://www.creative-tim.com/product/material-kit-react",
+          type: "internal",
+          route: "/pages/contactus",
           label: "聯絡我們",
           color: "info",
         }}
@@ -58,7 +61,7 @@ function AddAthlete() {
             boxShadow: ({ boxShadows: { xxl } }) => xxl,
           }}
         >
-          <Form />
+            <Profile />
         </Card>
         <MKBox pt={6} px={1} mt={6}>
           <Footer />
@@ -68,4 +71,4 @@ function AddAthlete() {
   );
 }
 
-export default AddAthlete;
+export default Athlete;

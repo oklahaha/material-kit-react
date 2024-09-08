@@ -8,16 +8,21 @@ import MKBox from "components/MKBox";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 
 // Author page sections
-import Form from "pages/Competition/AddAthlete/Sections/Form";
+import Form from "pages/Competition/EditAthlete/Sections/Form";
 import Footer from "examples/Footers/SwimmingFooter";
 
 // Routes
 import routes from "routes";
+import { useLocation } from 'react-router-dom';
 
 // Images
 import bgImage from "assets/images/method-bg.jpg";
 
-function AddAthlete() {
+function EditAthlete() {
+
+  const location = useLocation();
+  const athleteId = location.state?.athleteId;
+
   return (
     <>
       <DefaultNavbar
@@ -58,7 +63,7 @@ function AddAthlete() {
             boxShadow: ({ boxShadows: { xxl } }) => xxl,
           }}
         >
-          <Form />
+          <Form athleteId={athleteId} />
         </Card>
         <MKBox pt={6} px={1} mt={6}>
           <Footer />
@@ -68,4 +73,4 @@ function AddAthlete() {
   );
 }
 
-export default AddAthlete;
+export default EditAthlete;
