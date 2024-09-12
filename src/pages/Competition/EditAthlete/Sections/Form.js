@@ -30,8 +30,8 @@ function Form({ athleteId }) {
                     setAthlete(prev => ({
                         ...prev,
                         ...fetchedAthlete,
-                        age: fetchedAthlete.age.toString(),
-                        phone: fetchedAthlete.phone.toString(),
+                        age: fetchedAthlete.age !== null ? fetchedAthlete.age.toString() : "",
+                        phone: fetchedAthlete.phone !== null ? fetchedAthlete.phone.toString() : "",
                     }));
                 } else {
                     console.error('Failed to fetch athlete data');

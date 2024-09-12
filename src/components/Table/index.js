@@ -1,15 +1,21 @@
 import DataTable from "react-data-table-component";
 import React, {useState, useEffect} from "react"
-import Button from '@mui/material/Button';
 
 function Table() {
+
+    const getNews = (event) => {
+		const newsId = event.currentTarget.id;
+        console.log(newsId);
+	};
 
     const [news, setNews] = useState([]);
     useEffect(() => {
         fetch("http://localhost:8080/news/list")
         .then((response) => response.json())
         .then((data) => {
-            setNews(data);
+            // Sort data by date in descending order
+            const sortedData = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+            setNews(sortedData);
         })
         .catch((err) => {
             console.log(err.message);
@@ -18,6 +24,7 @@ function Table() {
     
     const columns = [
         {
+            id: "date",
             name: "日期",
             selector: (row) => row.date,
             sortable: true,
@@ -29,11 +36,8 @@ function Table() {
         },
         {
             name: "詳情",
-            cells: (row) => (
-                <button onClick= {() => {alert('clicked');}}>
-                    詳情
-                </button>
-            )
+			cell: (row) => <button className="btn btn-default btn-primary" onClick={getNews} id={row.newsId}>詳情</button>,
+            ignoreRowClick: true
         }
     ];
 
