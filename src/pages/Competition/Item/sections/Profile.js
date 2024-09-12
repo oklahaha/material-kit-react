@@ -18,6 +18,10 @@ function Profile() {
     navigate("/pages/competition/hundredMBreaststroke", { state: { gender, age, title } });
   };
 
+  const handleRedirectFiftyMFreeStyle = (gender, age, title) => {
+    navigate("pages/competition/fiftyMFreeStyle", { state: {gender, age, title } });
+  };
+
   return (
     <MKBox component="section" py={{ xs: 6, sm: 12 }}>
       <Container>
@@ -124,7 +128,7 @@ function Profile() {
               <MKTypography variant="h3">項目 16</MKTypography>
               <MKTypography variant="body1">
                 <ul>
-                  <li><a onClick={() => handleRedirectHundredMBreaststroke('M', 13, '項目 26 男子 13歲 100M 胸泳')}>男子 13歲 100M 胸泳</a></li>
+                  <li><a onClick={() => handleRedirectHundredMBreaststroke('M', 13, '項目 16 男子 13歲 100M 胸泳')}>男子 13歲 100M 胸泳</a></li>
                 </ul>
               </MKTypography>
               <MKTypography variant="h3">項目 17</MKTypography>
@@ -197,6 +201,114 @@ function Profile() {
               <MKTypography variant="body1">
                 <ul>
                   <li><a onClick={() => handleRedirectHundredMBreaststroke('M', 12, '項目 28 男子 12歲 100M 胸泳')}>男子 12歲 100M 胸泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 29</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectFiftyMFreeStyle('F', 13, '項目 29 女子 13歲 50M 自由泳')}>女子 13歲 50M 自由泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 30</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectFiftyMFreeStyle('M', 13, '項目 30 男子 13歲 50M 自由泳')}>男子 13歲 50M 自由泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 31</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectFiftyMFreeStyle('F', 14, '項目 31 女子 14歲 50M 自由泳')}>女子 14歲 50M 自由泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 32</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectFiftyMFreeStyle('M', 14, '項目 32 男子 14歲 50M 自由泳')}>男子 14歲 50M 自由泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 33</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectFiftyMFreeStyle('F', 15, '項目 33 女子 15歲以上 50M 自由泳')}>女子 15歲以上 50M 自由泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 34</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectFiftyMFreeStyle('M', 15, '項目 34 男子 15歲以上 50M 自由泳')}>男子 15歲以上 50M 自由泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 35</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectFiftyMFreeStyle('F', 7, '項目 35 女子 7歲 50M 自由泳')}>女子 7歲 50M 自由泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 36</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectFiftyMFreeStyle('M', 7, '項目 36 男子 7歲 50M 自由泳')}>男子 7歲 50M 自由泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 37</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectFiftyMFreeStyle('F', 8, '項目 37 女子 8歲 50M 自由泳')}>女子 8歲 50M 自由泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 38</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectFiftyMFreeStyle('M', 7, '項目 38 男子 8歲 50M 自由泳')}>男子 8歲 50M 自由泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 39</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectFiftyMFreeStyle('F', 9, '項目 39 女子 9歲 50M 自由泳')}>女子 9歲 50M 自由泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 40</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectFiftyMFreeStyle('M', 9, '項目 40 男子 9歲 50M 自由泳')}>男子 9歲 50M 自由泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 41</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectFiftyMFreeStyle('F', 10, '項目 41 女子 10歲 50M 自由泳')}>女子 10歲 50M 自由泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 42</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectFiftyMFreeStyle('M', 10, '項目 42 男子 10歲 50M 自由泳')}>男子 10歲 50M 自由泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 43</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectFiftyMFreeStyle('F', 11, '項目 43 女子 11歲 50M 自由泳')}>女子 11歲 50M 自由泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 44</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectFiftyMFreeStyle('M', 11, '項目 44 男子 11歲 50M 自由泳')}>男子 11歲 50M 自由泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 45</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectFiftyMFreeStyle('F', 12, '項目 45 女子 12歲 50M 自由泳')}>女子 12歲 50M 自由泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 46</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectFiftyMFreeStyle('M', 12, '項目 46 男子 12歲 50M 自由泳')}>男子 12歲 50M 自由泳</a></li>
                 </ul>
               </MKTypography>
             </Grid>

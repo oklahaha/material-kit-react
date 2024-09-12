@@ -32,6 +32,7 @@ import HundredMFreestylePage from "layouts/pages/competition/hundredMFreestyle";
 import EditHundredMFreestylePage from "layouts/pages/competition/editHundredMFreestyle";
 import HundredMBreaststrokePage from "layouts/pages/competition/hundredMBreaststroke";
 import EditHundredMBreaststrokePage from "layouts/pages/competition/editHundredMBreaststroke"
+import FiftyMFreeStylePage from "layouts/pages/competition/fiftyMFreeStyle";
 
 // Material Kit 2 React routes
 import routes from "routes";
@@ -71,6 +72,7 @@ export default function App() {
         <Route path="/pages/competition/editHundredMFreestyle" element={<EditHundredMFreestylePage />} />
         <Route path="/pages/competition/hundredMBreaststroke" element={<HundredMBreaststrokePage />} />
         <Route path="/pages/competition/editHundredMBreaststroke" element={<EditHundredMBreaststrokePage />} />
+        <Route path="/pages/competition/fiftyMFreeStyle" element={<FiftyMFreeStylePage />} />
 
       </Routes>
     </ThemeProvider>
