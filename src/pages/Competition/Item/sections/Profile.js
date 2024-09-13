@@ -19,23 +19,47 @@ function Profile() {
   };
 
   const handleRedirectFiftyMFreeStyle = (gender, age, title) => {
-    navigate("pages/competition/fiftyMFreeStyle", { state: {gender, age, title } });
+    navigate("/pages/competition/fiftyMFreeStyle", { state: {gender, age, title } });
   };
 
   const handleRedirectFiftyMBackstroke = (gender, age, title) => {
-    navigate("pages/competition/fiftyMBackstroke", {state: {gender, age, title } });
+    navigate("/pages/competition/fiftyMBackstroke", {state: {gender, age, title } });
   };
 
   const handleRedirectFiftyMBreaststroke = (gender, age, title) => {
-    navigate("pages/competition/fiftyMBreaststroke", {state: {gender, age, title } });
+    navigate("/pages/competition/fiftyMBreaststroke", {state: {gender, age, title } });
   };
 
   const handleRedirectFiftyMButterflystroke = (gender, age, title) => {
-    navigate("pages/competition/fiftyMButterflystroke", {state: {gender, age, title } });
+    navigate("/pages/competition/fiftyMButterflystroke", {state: {gender, age, title } });
   };
 
   const handleRedirectFiftyMKickBoard = (gender, age, title) => {
-    navigate("pages/competition/fiftyMKickBoard", {state: {gender, age, title } });
+    navigate("/pages/competition/fiftyMKickBoard", {state: {gender, age, title } });
+  };
+
+  const handleRedirectEliteHundredMFreestyle = (title) => {
+    navigate("/pages/competition/eliteHundredMFreestyle", {state: {title } });
+  };
+
+  const handleRedirectEliteHundredMBreaststroke = (title) => {
+    navigate("/pages/competition/eliteHundredMBreaststroke", {state: {title } });
+  };
+
+  const handleRedirectEliteFiftyMFreesStyle = (title) => {
+    navigate("/pages/competition/eliteFiftyMFreeStyle", {state: {title } });
+  };
+
+  const handleRedirectEliteFiftyMBackstroke = (title) => {
+    navigate("/pages/competition/eliteFiftyMBackstroke", {state: {title } });
+  };
+
+  const handleRedirectEliteFiftyMBreaststroke = (title) => {
+    navigate("/pages/competition/eliteFiftyMBreaststroke", {state: {title } });
+  };
+
+  const handleRedirectEliteFiftyMButterflystroke = (title) => {
+    navigate("/pages/competition/eliteFiftyMButterflystroke", {state: {title } });
   };
 
   return (
@@ -85,6 +109,12 @@ function Profile() {
               <MKTypography variant="body1">
                 <ul>
                   <li><a onClick={() => handleRedirectHundredMFreestyle('M', 15, '項目 6 男子 15歲以上 100M 自由泳')}>男子 15歲以上 100M 自由泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 A</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectEliteHundredMFreestyle('項目 A 精英組 男女子混合 100M 自由泳')}>精英組 男女子混合 100M 自由泳</a></li>
                 </ul>
               </MKTypography>
               <MKTypography variant="h3">項目 7</MKTypography>
@@ -171,6 +201,12 @@ function Profile() {
                   <li><a onClick={() => handleRedirectHundredMBreaststroke('M', 15, '項目 20 男子 15歲以上 100M 胸泳')}>男子 15歲以上 100M 胸泳</a></li>
                 </ul>
               </MKTypography>
+              <MKTypography variant="h3">項目 B</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectEliteHundredMBreaststroke('項目 B 精英組 男女子混合 100M 胸泳')}>精英組 男女子混合 100M 胸泳</a></li>
+                </ul>
+              </MKTypography>             
               <MKTypography variant="h3">項目 21</MKTypography>
               <MKTypography variant="body1">
                 <ul>
@@ -253,6 +289,12 @@ function Profile() {
               <MKTypography variant="body1">
                 <ul>
                   <li><a onClick={() => handleRedirectFiftyMFreeStyle('M', 15, '項目 34 男子 15歲以上 50M 自由泳')}>男子 15歲以上 50M 自由泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 C</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectEliteFiftyMFreesStyle('項目 C 精英組 男女子混合 50M 自由泳')}>精英組 男女子混合 50M 自由泳</a></li>
                 </ul>
               </MKTypography>
               <MKTypography variant="h3">項目 35</MKTypography>
@@ -363,6 +405,12 @@ function Profile() {
                   <li><a onClick={() => handleRedirectFiftyMBackstroke('M', 15, '項目 52 男子 15歲以上 50M 背泳')}>男子 15歲以上 50M 背泳</a></li>
                 </ul>
               </MKTypography>
+              <MKTypography variant="h3">項目 D</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectEliteFiftyMBackstroke('項目 D 精英組 男女子混合 50M 背泳')}>精英組 男女子混合 50M 背泳</a></li>
+                </ul>
+              </MKTypography>
               <MKTypography variant="h3">項目 53</MKTypography>
               <MKTypography variant="body1">
                 <ul>
@@ -471,6 +519,12 @@ function Profile() {
                   <li><a onClick={() => handleRedirectFiftyMBreaststroke('M', 15, '項目 70 男子 15歲以上 50M 胸泳')}>男子 15歲以上 50M 胸泳</a></li>
                 </ul>
               </MKTypography>
+              <MKTypography variant="h3">項目 E</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectEliteFiftyMBreaststroke('項目 E 精英組 男女子混合 50M 胸泳')}>精英組 男女子混合 50M 胸泳</a></li>
+                </ul>
+              </MKTypography>
               <MKTypography variant="h3">項目 71</MKTypography>
               <MKTypography variant="body1">
                 <ul>
@@ -577,6 +631,12 @@ function Profile() {
               <MKTypography variant="body1">
                 <ul>
                   <li><a onClick={() => handleRedirectFiftyMButterflystroke('M', 15, '項目 88 男子 15歲以上 50M 蝶泳')}>男子 15歲以上 50M 蝶泳</a></li>
+                </ul>
+              </MKTypography>
+              <MKTypography variant="h3">項目 F</MKTypography>
+              <MKTypography variant="body1">
+                <ul>
+                  <li><a onClick={() => handleRedirectEliteFiftyMButterflystroke('項目 F 精英組 男女混合 50M 蝶泳')}>精英組 男女混合 50M 蝶泳</a></li>
                 </ul>
               </MKTypography>
               <MKTypography variant="h3">項目 89</MKTypography>
