@@ -33,6 +33,15 @@ import EditHundredMFreestylePage from "layouts/pages/competition/editHundredMFre
 import HundredMBreaststrokePage from "layouts/pages/competition/hundredMBreaststroke";
 import EditHundredMBreaststrokePage from "layouts/pages/competition/editHundredMBreaststroke"
 import FiftyMFreeStylePage from "layouts/pages/competition/fiftyMFreeStyle";
+import EditFiftyMFreeStylePage from "layouts/pages/competition/editFiftyMFreeStyle"
+import FiftyMBackstrokePage from "layouts/pages/competition/fiftyMBackstroke";
+import EditFiftyMBackstrokePage from "layouts/pages/competition/editFiftyMBackstroke"
+import FiftyMBreaststrokePage from "layouts/pages/competition/fiftyMBreaststroke"
+import EditFiftyMBreaststrokePage from "layouts/pages/competition/editFiftyMBreaststroke";
+import FiftyMButterflystrokePage from "layouts/pages/competition/fiftyMButterflystroke"
+import EditFiftyMButterflystrokePage from "layouts/pages/competition/editFiftyMButterflystroke";
+import FiftyMKickBoardPage from "layouts/pages/competition/fiftyMKickBoard"
+import EditFiftyMKickBoardPage from "layouts/pages/competition/editFiftyMKickBoard";
 
 // Material Kit 2 React routes
 import routes from "routes";
@@ -73,6 +82,15 @@ export default function App() {
         <Route path="/pages/competition/hundredMBreaststroke" element={<HundredMBreaststrokePage />} />
         <Route path="/pages/competition/editHundredMBreaststroke" element={<EditHundredMBreaststrokePage />} />
         <Route path="/pages/competition/fiftyMFreeStyle" element={<FiftyMFreeStylePage />} />
+        <Route path="/pages/competition/editFiftyMFreeStyle" element={<EditFiftyMFreeStylePage />} />
+        <Route path="/pages/competition/fiftyMBackstroke" element={<FiftyMBackstrokePage />} />
+        <Route path="/pages/competition/editFiftyMBackstroke" element={<EditFiftyMBackstrokePage />} />
+        <Route path="/pages/competition/fiftyMBreaststroke" element={<FiftyMBreaststrokePage />} />
+        <Route path="/pages/competition/editFiftyMBreaststroke" element={<EditFiftyMBreaststrokePage />} />
+        <Route path="/pages/competition/fiftyMButterflystroke" element={<FiftyMButterflystrokePage />} />
+        <Route path="/pages/competition/editFiftyMButterflystroke" element={<EditFiftyMButterflystrokePage />} />
+        <Route path="/pages/competition/fiftyMKickBoard" element={<FiftyMKickBoardPage />} />
+        <Route path="/pages/competition/editFiftyMKickBoard" element={<EditFiftyMKickBoardPage />} />
 
       </Routes>
     </ThemeProvider>
