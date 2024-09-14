@@ -31,17 +31,29 @@ import EditAthletePage from "layouts/pages/competition/editAthlete";
 import HundredMFreestylePage from "layouts/pages/competition/hundredMFreestyle";
 import EditHundredMFreestylePage from "layouts/pages/competition/editHundredMFreestyle";
 import HundredMBreaststrokePage from "layouts/pages/competition/hundredMBreaststroke";
-import EditHundredMBreaststrokePage from "layouts/pages/competition/editHundredMBreaststroke"
+import EditHundredMBreaststrokePage from "layouts/pages/competition/editHundredMBreaststroke";
 import FiftyMFreeStylePage from "layouts/pages/competition/fiftyMFreeStyle";
-import EditFiftyMFreeStylePage from "layouts/pages/competition/editFiftyMFreeStyle"
+import EditFiftyMFreeStylePage from "layouts/pages/competition/editFiftyMFreeStyle";
 import FiftyMBackstrokePage from "layouts/pages/competition/fiftyMBackstroke";
-import EditFiftyMBackstrokePage from "layouts/pages/competition/editFiftyMBackstroke"
-import FiftyMBreaststrokePage from "layouts/pages/competition/fiftyMBreaststroke"
+import EditFiftyMBackstrokePage from "layouts/pages/competition/editFiftyMBackstroke";
+import FiftyMBreaststrokePage from "layouts/pages/competition/fiftyMBreaststroke";
 import EditFiftyMBreaststrokePage from "layouts/pages/competition/editFiftyMBreaststroke";
-import FiftyMButterflystrokePage from "layouts/pages/competition/fiftyMButterflystroke"
+import FiftyMButterflystrokePage from "layouts/pages/competition/fiftyMButterflystroke";
 import EditFiftyMButterflystrokePage from "layouts/pages/competition/editFiftyMButterflystroke";
-import FiftyMKickBoardPage from "layouts/pages/competition/fiftyMKickBoard"
+import FiftyMKickBoardPage from "layouts/pages/competition/fiftyMKickBoard";
 import EditFiftyMKickBoardPage from "layouts/pages/competition/editFiftyMKickBoard";
+import EliteHundredMFreestylePage from "layouts/pages/competition/eliteHundredMFreestyle";
+import EditEliteHundredMFreestylePage from "layouts/pages/competition/editEliteHundredMFreestyle";
+import EliteHundredMBreaststrokePage from "layouts/pages/competition/eliteHundredMBreaststroke";
+import EditEliteHundredMBreaststrokePage from "layouts/pages/competition/editEliteHundredMBreaststroke";
+import EliteFiftyMFreeStylePage from "layouts/pages/competition/eliteFiftyMFreeStyle";
+import EditEliteFiftyMFreeStylePage from "layouts/pages/competition/editEliteFiftyMFreeStyle";
+import EliteFiftyMBackstrokePage from "layouts/pages/competition/eliteFiftyMBackstroke";
+import EditEliteFiftyMBackstrokePage from "layouts/pages/competition/editEliteFiftyMBackstroke";
+import EliteFiftyMBreaststrokePage from "layouts/pages/competition/eliteFiftyMBreaststroke";
+import EditEliteFiftyMBreaststrokePage from "layouts/pages/competition/editEliteFiftyMBreaststroke";
+import EliteFiftyMButterflystrokePage from "layouts/pages/competition/eliteFiftyMButterflystroke";
+import EditEliteFiftyMButterflystrokePage from "layouts/pages/competition/editEliteFiftyMButterflystroke";
 
 // Material Kit 2 React routes
 import routes from "routes";
@@ -91,6 +103,18 @@ export default function App() {
         <Route path="/pages/competition/editFiftyMButterflystroke" element={<EditFiftyMButterflystrokePage />} />
         <Route path="/pages/competition/fiftyMKickBoard" element={<FiftyMKickBoardPage />} />
         <Route path="/pages/competition/editFiftyMKickBoard" element={<EditFiftyMKickBoardPage />} />
+        <Route path="/pages/competition/eliteHundredMFreestyle" element={<EliteHundredMFreestylePage />} />
+        <Route path="/pages/competition/editEliteHundredMFreestyle" element={<EditEliteHundredMFreestylePage />} />
+        <Route path="/pages/competition/eliteHundredMBreaststroke" element={<EliteHundredMBreaststrokePage />} />
+        <Route path="/pages/competition/editEliteHundredMBreaststroke" element={<EditEliteHundredMBreaststrokePage />} />
+        <Route path="/pages/competition/eliteFiftyMFreeStyle" element={<EliteFiftyMFreeStylePage />} />
+        <Route path="/pages/competition/editEliteFiftyMFreeStyle" element={<EditEliteFiftyMFreeStylePage />} />
+        <Route path="/pages/competition/eliteFiftyMBackstroke" element={<EliteFiftyMBackstrokePage />} />
+        <Route path="/pages/competition/editEliteFiftyMBackstroke" element={<EditEliteFiftyMBackstrokePage />} />
+        <Route path="/pages/competition/eliteFiftyMBreaststroke" element={<EliteFiftyMBreaststrokePage />} />
+        <Route path="/pages/competition/editEliteFiftyMBreaststroke" element={<EditEliteFiftyMBreaststrokePage />} />
+        <Route path="/pages/competition/eliteFiftyMButterflystroke" element={<EliteFiftyMButterflystrokePage />} />
+        <Route path="/pages/competition/editEliteFiftyMButterflystroke" element={<EditEliteFiftyMButterflystrokePage />} />
 
       </Routes>
     </ThemeProvider>

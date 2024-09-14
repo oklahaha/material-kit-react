@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ConfirmModal from "./ConfirmModal";
+import * as XLSX from 'xlsx';
 
 function Table({ gender, age, title }) {
 
@@ -66,7 +67,38 @@ function Table({ gender, age, title }) {
 		fetchHundredMFreestyle();
 	}, [gender, age]);
     
-    const columns = [
+    const exportToExcel = () => {
+        const fileType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+        const fileExtension = '.xlsx';
+
+        // Flatten the data structure and sort by time as string
+        const flattenedData = event
+            .map(row => ({
+                參賽者: row.athleteId.chName,
+                性別: row.gender,
+                年齡: row.age,
+                區域: row.district,
+                時間: row.time
+            }))
+
+        const ws = XLSX.utils.json_to_sheet(flattenedData);
+        const wb = { Sheets: { 'data': ws }, SheetNames: ['data'] };
+        const excelBuffer = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+        const data = new Blob([excelBuffer], { type: fileType });
+        
+        const fileName = `${title}_${new Date().toISOString()}${fileExtension}`;
+        
+        if (navigator.msSaveOrOpenBlob) {
+            navigator.msSaveOrOpenBlob(data, fileName);
+        } else {
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(data);
+            link.download = fileName;
+            link.click();
+        }
+    };
+
+	const columns = [
         {
             name: "參賽者",
             selector: (row) => row.athleteId.chName,
@@ -114,6 +146,13 @@ function Table({ gender, age, title }) {
     return (
         <>
             <div>
+                <button 
+                    type="button"
+                    className="btn btn-success mb-3" 
+                    onClick={exportToExcel}
+                >
+                    Export to Excel
+                </button>
                 <DataTable 
                     columns={columns}
                     data={event}

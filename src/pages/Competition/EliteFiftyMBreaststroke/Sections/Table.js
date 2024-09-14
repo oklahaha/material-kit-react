@@ -4,16 +4,16 @@ import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ConfirmModal from "./ConfirmModal";
 
-function Table({ gender, age, title }) {
+function Table({ title }) {
 
 	const navigate = useNavigate();
     const [event, setEvent] = useState([]);
 	const [showModal, setShowModal] = useState(false);
 	const [selectedId, setSelectedId] = useState(null);
 
-	const editHundredMBreaststroke = (event) => {
+	const editEliteFiftyMBreaststroke = (event) => {
 		const id = event.currentTarget.id;
-		navigate("/pages/competition/editHundredMBreaststroke", { state: { id } });
+		navigate("/pages/competition/editEliteFiftyMBreaststroke", { state: { id } });
 	};
 
 	const handleDeleteClick = (id) => {
@@ -26,45 +26,43 @@ function Table({ gender, age, title }) {
 		setSelectedId(null);
 	};
 
-	const deleteHundredBreaststroke = (id) => {
-		fetch(`http://localhost:8080/hundredMBreaststroke/deleteBreaststroke?id=${id}`, {
+	const deleteEliteFiftyMBreaststroke = (id) => {
+		fetch(`http://localhost:8080/eliteFiftyMBreaststroke/deleteEliteFiftyMBreaststroke?id=${id}`, {
 			method: 'DELETE',
 		})
 		.then((response) => {
 			if (response.status === 204) {
 				fetchHundredMBreaststroke();
-				onAlertChange("Delete HundredMBreaststroke success!", "success");
+				onAlertChange("Delete EliteFiftyMBreaststroke success!", "success");
 			} else {
 				console.log('Failed to delete athlete');
-				onAlertChange("Delete HundredMBreaststroke fail!", "danger");
+				onAlertChange("Delete EliteFiftyMBreaststroke fail!", "danger");
 			}
 		})
 		.catch((err) => {
 			console.log(err.message);
-			onAlertChange("Delete HundredMBreaststroke fail!", "danger");
+			onAlertChange("Delete EliteFiftyMBreaststroke fail!", "danger");
 		})
 		.finally(() => {
 			handleCloseModal();
 		});
 	};
 
-	const fetchHundredMBreaststroke = () => {
-        if (gender && age) {
-            fetch(`http://localhost:8080/hundredMBreaststroke/listHundredMBreaststrokeByGenderAndAge?gender=${gender}&age=${age}`)
-            .then((response) => response.json())
-            .then((data) => {
-                setEvent(data);
-            })
-            .catch((err) => {
-                console.log(err.message);
-                onAlertChange("Fetch HundredMBreaststroke data fail!", "danger"); // Added user feedback
-            });
-        }
+	const fetchEliteFiftyMBreaststroke = () => {
+		fetch("http://localhost:8080/eliteFiftyMBreaststroke/listEliteFiftyMBreaststroke")
+		.then((response) => response.json())
+		.then((data) => {
+			setEvent(data);
+		})
+		.catch((err) => {
+			console.log(err.message);
+			onAlertChange("Fetch EliteFiftyMBreaststroke data fail!", "danger"); // Added user feedback
+		});
     };
 
 	useEffect(() => {
-		fetchHundredMBreaststroke();
-	}, [gender, age]);
+		fetchEliteFiftyMBreaststroke();
+	}, []);
 
 	const exportToExcel = () => {
         const fileType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
@@ -125,7 +123,7 @@ function Table({ gender, age, title }) {
         },
 		{
 			name: "編輯",
-			cell: (row) => <button className="btn btn-default btn-primary" onClick={editHundredMBreaststroke} id={row.id}>編輯</button>,
+			cell: (row) => <button className="btn btn-default btn-primary" onClick={editEliteFiftyMBreaststroke} id={row.id}>編輯</button>,
 			ignoreRowClick: true
 		},
 		{
@@ -164,7 +162,7 @@ function Table({ gender, age, title }) {
 			<ConfirmModal
 				show={showModal}
 				handleClose={handleCloseModal}
-				handleDelete={deleteHundredBreaststroke}
+				handleDelete={deleteEliteFiftyMBreaststroke}
 				id={selectedId}
 			/>
         </>
